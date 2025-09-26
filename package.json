@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "tsx watch src/index.ts"
   },
   "keywords": [],
@@ -30,6 +30,7 @@
     "zod": "^4.1.5"
   },
   "devDependencies": {
+    "@faker-js/faker": "^10.0.0",
     "@types/bcrypt": "^6.0.0",
     "@types/node": "^24.3.1",
     "@types/pg": "^8.15.5",

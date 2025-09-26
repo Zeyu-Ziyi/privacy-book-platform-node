@@ -21,9 +21,9 @@ const startServer = async () => {
     credentials: true,
   }))
 
-  app.get('/', (c) => c.text('欢迎来到隐私保护书店 API!'))
+  app.get('/', (c) => c.text('Welcome to the privacy-preserving bookstore API!'))
 
-  // HTTP 路由
+  // HTTP routes
   app.route('/users', users)
   app.route('/books', books)
   app.route('/webhooks', webhookRoutes)
@@ -39,9 +39,8 @@ const startServer = async () => {
     port,
   })
 
-  console.log(`🚀 服务器运行在 http://localhost:${port}`)
+  console.log(`🚀 server running at http://localhost:${port}`)
 
-  // --- ✅ 新增 WebSocket 处理 ---
   const wss = new WebSocketServer({ server: server as any })
 
   wss.on('connection', (ws, req) => {
@@ -50,10 +49,10 @@ const startServer = async () => {
     
     if (match && match[1]) {
       const purchaseId = match[1];
-      // 如果路径匹配，将连接和 purchaseId 交给我们的专用处理函数
+      // if the path matches, pass the connection and purchaseId to our dedicated handler
       handlePurchaseConnection(ws, purchaseId);
     } else {
-      // 如果路径不匹配，立即关闭连接
+      // if the path doesn't match, close the connection immediately
       ws.close(1011, 'Invalid WebSocket endpoint');
     }
   })
