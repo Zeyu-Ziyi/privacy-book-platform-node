@@ -51,7 +51,7 @@ The core innovation of this project lies in its purchase and download process, w
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/your-username/privacy-book-platform-node.git](https://github.com/your-username/privacy-book-platform-node.git)
+    git clone [https://github.com/Zeyu-Ziyi/privacy-book-platform-node.git](https://github.com/Zeyu-Ziyi/privacy-book-platform-node.git)
     cd privacy-book-platform-node
     ```
 
